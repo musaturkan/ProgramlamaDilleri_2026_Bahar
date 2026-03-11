@@ -1,5 +1,13 @@
-﻿internal class Program
+﻿using DataModel;
+
+internal class Program
 {
+    static void Degistir(Urun u)
+    {
+        u.Ad = "Buzdolabı";
+        u = new Urun { Id = 3, Ad = "Televizyon", Fiyat = 4000 };
+        u.Ad = "Çamaşır Makinesi";
+    }
     private static void Main(string[] args)
     {
         ///Stack ve Heap Kavramları
@@ -10,5 +18,22 @@
         int sayi2 = sayi1; //sayi1'in değeri sayi2'ye kopyalanır
         sayi2 = 20; //sayi2'nin değeri değiştirilir, sayi1 etkilenmez
         Console.WriteLine(sayi1);
+
+        Urun urun1; //Stack'te saklanır, ancak içindeki veriler Heap'te saklanır
+        urun1 = new Urun { Id = 1, Ad = "Laptop", Fiyat = 5000 }; //Heap'te saklanır
+        //Urun urun1 = new Urun { Id = 1, Ad = "Laptop", Fiyat = 5000 }; //Heap'te saklanır
+        ///urun1.Ad = "Masaüstü Bilgisayar"; //urun1'in Ad özelliği değiştirilir
+
+        Urun urun2 = new Urun { Id = 2, Ad = "Telefon", Fiyat = 3000 }; //Heap'te saklanır
+
+        ///urun2 = urun1; //urun1'in referansı urun2'ye atanır, her iki değişken de aynı nesneyi gösterir
+
+        //urun2.Ad= "Tablet"; //urun2'nin Ad özelliği değiştirilir, urun1 de etkilenir çünkü her iki değişken aynı nesneyi gösterir
+
+        Degistir(urun2);
+
+        Console.WriteLine(urun1.Ad); //Laptop
+        Console.WriteLine(urun2.Ad);
+
     }
 }
