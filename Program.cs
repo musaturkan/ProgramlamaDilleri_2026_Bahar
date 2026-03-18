@@ -36,4 +36,7 @@ internal class Program
         Console.WriteLine(urun2.Ad);
 
     }
+
+
+   
 }

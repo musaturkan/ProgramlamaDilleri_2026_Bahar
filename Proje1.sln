@@ -10,6 +10,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ornek2_EfCoreSorgulama", ".
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ornek3_Stack_Heap", "..\Ornek3_Stack_Heap\Ornek3_Stack_Heap.csproj", "{05DC3341-55FE-4BD1-9A2E-7D219F5A9ED3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "..\Services\Services.csproj", "{65B178F1-C3A4-4E40-A392-C6BA1BA2916C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -32,6 +34,10 @@ Global
 		{05DC3341-55FE-4BD1-9A2E-7D219F5A9ED3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{05DC3341-55FE-4BD1-9A2E-7D219F5A9ED3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{05DC3341-55FE-4BD1-9A2E-7D219F5A9ED3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65B178F1-C3A4-4E40-A392-C6BA1BA2916C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65B178F1-C3A4-4E40-A392-C6BA1BA2916C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65B178F1-C3A4-4E40-A392-C6BA1BA2916C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65B178F1-C3A4-4E40-A392-C6BA1BA2916C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
