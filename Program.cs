@@ -13,18 +13,27 @@ internal class Program
     }
     private static void Main(string[] args)
     {
-        var servisler = new ServiceCollection();
-
+        ///Dependency Injection (Bağımlılık Enjeksiyonu) Nedir?
+        ///Servis sınıflarının ihtiyaç duyduğu bağımlılıkları dışarıdan sağlayarak, sınıflar arasındaki bağımlılıkları azaltmayı amaçlayan bir tasarım desenidir.
+        ///Servis sınıflarını new ile yeni nesne olarak türetmek yerine
+        ///sunum katmanında interface'ler kullanılır ve bu interface'lerin somut implementasyonları servis katmanında oluşturulur.
+        ///interface içine yerleşecek nesne de servis katmanında oluşturulur
+        
+        var servisler = new ServiceCollection();                
         servisler.AddTransient<IUrunService, UrunService>();
         servisler.AddScoped<IMarkaService, MarkaService>();
         servisler.AddSingleton<IFabrika, ServiceFabrika>();       
 
         var serviceProvider = servisler.BuildServiceProvider();
 
+
+
         var fabrika = serviceProvider.GetService<IFabrika>();
         //var urunService = serviceProvider.GetService<IUrunService>();
         var urunService = fabrika.UrunServiceOlustur();
         urunService.Yazdir(3);
+        var markaService = fabrika.MarkaServiceOlustur();
+        markaService.MarkaEkle(new Marka { Id = 1, Ad = "Samsung" });
 
         /////Stack ve Heap Kavramları
         /////Value Type ve Reference Type Kavramları
@@ -55,8 +64,8 @@ internal class Program
         ////////////Metot çağırma işlemi//////
         //Services.UrunService urunService = new Services.UrunService();
         //var urunService = Services.ServiceFabrika.UrunServiceOlustur();
-        
-        urunService.Yazdir(3);
+        var urunServis = serviceProvider.GetService<IUrunService>();
+        urunServis.Yazdir(5);
 
     }
 
