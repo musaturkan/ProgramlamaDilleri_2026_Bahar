@@ -54,7 +54,8 @@ internal class Program
 
         ////////////Metot çağırma işlemi//////
         //Services.UrunService urunService = new Services.UrunService();
-        var urunService = Services.ServiceFabrika.UrunServiceOlustur();
+        //var urunService = Services.ServiceFabrika.UrunServiceOlustur();
+        
         urunService.Yazdir(3);
 
     }
